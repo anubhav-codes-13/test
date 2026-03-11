@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Enterprise Customer Support System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        accent: {
+                            indigo: '#6366f1',
+                            cyan: '#06b6d4',
+                            fuchsia: '#d946ef',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-border {
+            border: 1px solid transparent;
+            background: linear-gradient(#0f172a, #0f172a) padding-box,
+                linear-gradient(135deg, #6366f1, #06b6d4) border-box;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-slate-400 font-sans selection:bg-indigo-500/30 selection:text-white">
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute top-[-5%] left-[-5%] w-[30%] h-[30%] bg-accent-indigo opacity-5 blur-[120px] rounded-full">
+        </div>
+        <div
+            class="absolute bottom-[-5%] right-[-5%] w-[30%] h-[30%] bg-accent-cyan opacity-5 blur-[120px] rounded-full">
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-6 py-20">
+
+        <!-- Header / Intro -->
+        <header class="mb-24 text-center">
+            <h1 class="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-8">
+                AI-Powered Enterprise <span class="text-accent-cyan">Customer Support System</span>
+            </h1>
+            <div class="glass p-8 rounded-3xl text-left border border-white/5 max-w-3xl mx-auto">
+                <p class="text-slate-300 leading-relaxed italic">
+                    Below is a **clear, structured, and business-focused version** of your notes. It explains the
+                    **problem, current system, pain points, and the proposed AI-based solution** in a way that can be
+                    used for **internal documentation, product planning, or a demo presentation**.
+                </p>
+            </div>
+        </header>
+
+        <hr class="border-white/5 my-16">
+
+        <!-- Vision Section -->
+        <section class="mb-24">
+            <h2 class="text-3xl font-display font-bold text-white mb-8 border-l-4 border-accent-indigo pl-6">Vision,
+                Problem Statement, and Proposed Solution</h2>
+
+            <div class="grid md:grid-cols-1 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-200 mb-4">1. Background</h3>
+                        <p class="mb-4">Large enterprises receive **massive volumes of customer support requests** every
+                            month. Customers typically contact support when they face issues such as:</p>
+                        <ul class="grid md:grid-cols-2 gap-3 pl-4">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent-indigo"></div> * Payment completed but
+                                order not created
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent-indigo"></div> * Order tracking problems
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent-indigo"></div> * Refund delays
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent-indigo"></div> * Card payment failures
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent-indigo"></div> * Account access issues
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-accent-indigo"></div> * Delivery related
+                                concerns
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/5 p-6 rounded-2xl">
+                        <p class="mb-2">Currently, most companies handle these issues through:</p>
+                        <ul class="space-y-2 pl-4">
+                            <li class="text-slate-300">* **Customer support calls**</li>
+                            <li class="text-slate-300">* **Email tickets**</li>
+                            <li class="text-slate-300">* **Live chat support with human agents**</li>
+                        </ul>
+                        <p class="mt-4 text-red-400 font-bold italic underline decoration-red-400/30">However, this
+                            system is **very expensive, slow, and inefficient** at scale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Current Workflow -->
+        <section class="mb-24 glass p-10 rounded-[40px] border border-white/10">
+            <h2 class="text-3xl font-display font-bold text-white mb-8">2. Current Customer Support Workflow</h2>
+            <p class="mb-6">The current workflow usually looks like this:</p>
+            <div class="space-y-4 mb-10">
+                <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                    <span class="text-accent-cyan font-bold">1.</span>
+                    <p>Customer faces an issue.</p>
+                </div>
+                <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                    <span class="text-accent-cyan font-bold">2.</span>
+                    <p>Customer tries to solve it through the website or FAQ.</p>
+                </div>
+                <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                    <span class="text-accent-cyan font-bold">3.</span>
+                    <div>
+                        <p class="mb-2 font-bold">If unresolved:</p>
+                        <ul class="space-y-2 ml-4">
+                            <li>* Customer sends an email</li>
+                            <li>* Customer chats with support</li>
+                            <li>* Customer calls the support center</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                    <span class="text-accent-cyan font-bold">4.</span>
+                    <p>A **human support agent handles the issue manually**.</p>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <p class="mb-4">In many companies:</p>
+                <ul class="space-y-2 ml-4 mb-6">
+                    <li>* Each support call costs around **$18 per call**.</li>
+                    <li>* Customers often **prefer not to call**.</li>
+                    <li>* Support centers handle **20,000–30,000 calls per month**.</li>
+                    <li>* This results in **very high operational costs**.</li>
+                </ul>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl border border-white/10">
+                <table class="w-full text-left">
+                    <thead class="bg-indigo-600 text-white text-sm font-bold">
+                        <tr>
+                            <th class="p-4">Metric</th>
+                            <th class="p-4">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 bg-black/20">
+                        <tr>
+                            <td class="p-4 text-slate-300">Calls per month</td>
+                            <td class="p-4 text-white font-bold">20,000 – 30,000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-slate-300">Cost per call</td>
+                            <td class="p-4 text-white font-bold">$18</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-slate-300 italic">Monthly cost</td>
+                            <td class="p-4 text-accent-cyan font-bold">~$360,000 – $540,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-8 text-white font-bold text-center">This makes **human-based support extremely expensive and
+                difficult to scale**.</p>
+        </section>
+
+        <!-- Section 3: Major Pain Points -->
+        <section class="mb-24">
+            <h2 class="text-3xl font-display font-bold text-white mb-10 text-center">3. Major Pain Points</h2>
+            <p class="text-center text-slate-400 mb-12">Enterprises face several major problems with traditional
+                customer support systems.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 border border-white/5 p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold text-white mb-4">1. Excessive Dependence on Human Agents</h3>
+                    <p class="text-sm mb-4">Most issues are simple and repetitive, such as:</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-6">
+                        <li>* Payment not reflecting</li>
+                        <li>* Card declined</li>
+                        <li>* Order confirmation delays</li>
+                        <li>* Refund status</li>
+                    </ul>
+                    <p class="text-slate-300">Yet every issue still requires a **human support representative**, which:
+                    </p>
+                    <ul class="mt-2 space-y-1 text-sm text-accent-indigo font-bold">
+                        <li>* Increases cost</li>
+                        <li>* Slows resolution time</li>
+                        <li>* Creates operational overhead</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900 border border-white/5 p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold text-white mb-4">2. High Operational Cost</h3>
+                    <p class="text-sm mb-4">Customer support centers require:</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-6">
+                        <li>* Large teams of agents</li>
+                        <li>* Infrastructure</li>
+                        <li>* Training</li>
+                        <li>* Management layers</li>
+                    </ul>
+                    <p class="mt-6 text-slate-300 leading-relaxed">
+                        The **per-call cost (~$18)** becomes extremely expensive when multiplied by **tens of thousands
+                        of calls monthly**.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 border border-white/5 p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold text-white mb-4">3. High Latency in Problem Resolution</h3>
+                    <p class="text-sm mb-4">Customers often experience:</p>
+                    <ul class="space-y-2 text-sm text-slate-400 mb-6">
+                        <li>* Long wait times</li>
+                        <li>* Slow email responses</li>
+                        <li>* Delayed ticket resolution</li>
+                    </ul>
+                    <p class="text-slate-300">This leads to:</p>
+                    <ul class="mt-2 text-sm text-fuchsia-400 font-bold space-y-1">
+                        <li>* Poor customer experience</li>
+                        <li>* Low satisfaction scores</li>
+                        <li>* Higher customer churn</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900 border border-white/5 p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold text-white mb-4">4. Humans Handling Simple Problems</h3>
+                    <p class="text-sm mb-4">Most customer issues **do not require human reasoning**.</p>
+                    <div class="bg-black/40 p-4 rounded-xl mb-4">
+                        <p class="text-xs text-slate-500 font-bold uppercase mb-2">Examples:</p>
+                        <ul class="text-sm space-y-1">
+                            <li>* Payment failed because of card type</li>
+                            <li>* OTP expired</li>
+                            <li>* Network error during checkout</li>
+                            <li>* Payment gateway timeout</li>
+                        </ul>
+                    </div>
+                    <p class="text-accent-cyan font-bold italic">These problems can be **automatically detected and
+                        resolved by intelligent systems**.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Goal -->
+        <section class="mb-24 py-16 bg-accent-indigo/10 rounded-[50px] text-center border border-indigo-500/10">
+            <h2 class="text-4xl font-display font-bold text-white mb-8">4. Goal of the New System</h2>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10">The objective is to build an **AI-Powered Customer
+                Support Platform** that:</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <span class="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white font-bold">1. Reduces
+                    human support workload</span>
+                <span class="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white font-bold">2. Minimizes
+                    operational costs</span>
+                <span class="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white font-bold">3. Resolves
+                    issues faster</span>
+                <span class="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white font-bold">4. Uses
+                    human agents only when necessary</span>
+            </div>
+
+            <div class="max-w-xl mx-auto bg-dark p-8 rounded-3xl border border-indigo-500/20 text-left">
+                <h3 class="text-accent-indigo font-bold mb-4 uppercase tracking-widest text-sm">Key Principle</h3>
+                <p class="text-white mb-6">Human intervention should happen **only when money or complex edge cases are
+                    involved**.</p>
+                <div class="space-y-4">
+                    <p class="text-sm text-slate-500 font-bold italic underline">Examples: Human support required when:
+                    </p>
+                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                        <li>* Refund disputes</li>
+                        <li>* Fraud reports</li>
+                        <li>* High-value transactions</li>
+                        <li>* Legal escalations</li>
+                    </ul>
+                </div>
+                <p class="mt-8 text-accent-cyan font-bold">Everything else should be handled automatically by the
+                    system.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Technical Setup -->
+        <section class="mb-24 grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-display font-bold text-white mb-8">5. Current Technical Setup</h2>
+                <p class="mb-8">The current prototype and experimentation environment includes:</p>
+
+                <h3 class="text-xl font-bold text-white mb-4">Backend Infrastructure</h3>
+                <ul class="space-y-3 mb-10 pl-4">
+                    <li class="flex items-center gap-3">
+                        <div class="w-1.5 h-1.5 bg-accent-indigo"></div> * Python backend
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-1.5 h-1.5 bg-accent-indigo"></div> * **LangGraph based multi-agent architecture**
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-1.5 h-1.5 bg-accent-indigo"></div> * AI reasoning agents
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-1.5 h-1.5 bg-accent-indigo"></div> * Hosted on **Google Cloud Platform virtual
+                        machines**
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mb-4">AI Models</h3>
+                <p class="mb-4">Currently using:</p>
+                <ul class="mb-6 pl-4">
+                    <li>* **Google Gemini models**</li>
+                </ul>
+                <p class="mb-4">Experimenting with:</p>
+                <ul class="space-y-2 pl-4">
+                    <li>* **Ollama SLM (Small Language Models)** for:</li>
+                    <li class="ml-6 flex items-center gap-2">
+                        <div class="w-1 h-1 bg-slate-500"></div> * Lower cost
+                    </li>
+                    <li class="ml-6 flex items-center gap-2">
+                        <div class="w-1 h-1 bg-slate-500"></div> * Faster inference
+                    </li>
+                    <li class="ml-6 flex items-center gap-2">
+                        <div class="w-1 h-1 bg-slate-500"></div> * Private hosting
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-12">
+                <div class="bg-indigo-600/5 p-8 rounded-3xl border border-indigo-500/10">
+                    <h3 class="text-xl font-bold text-white mb-6">System Architecture</h3>
+                    <p class="mb-4 font-bold text-sm uppercase text-slate-500">Backend Components:</p>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                            <span>* Multi-agent orchestration (LangGraph)</span>
+                            <span class="text-accent-cyan">[Active]</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                            <span>* Issue classification</span>
+                            <span class="text-accent-cyan">[Active]</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                            <span>* Resolution suggestion</span>
+                            <span class="text-accent-cyan">[Active]</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                            <span>* Analytics processing</span>
+                            <span class="text-accent-cyan">[Active]</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm">
+                            <span>* Chat log processing</span>
+                            <span class="text-accent-cyan">[Active]</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-cyan-600/5 p-8 rounded-3xl border border-cyan-500/10">
+                    <h3 class="text-xl font-bold text-white mb-4 text-accent-cyan">Frontend</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li>* **React UI**</li>
+                        <li>* Codebase stored in **GitHub**</li>
+                        <li>* Focus on **simplicity and usability**</li>
+                    </ul>
+                    <p class="p-4 bg-black/40 rounded-xl text-sm italic text-slate-300">The UI must be designed for
+                        **non-technical enterprise users**.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Beyond Chatbots -->
+        <section class="mb-24 text-center">
+            <h2 class="text-3xl font-display font-bold text-white mb-6">6. Beyond Chatbots</h2>
+            <div class="max-w-2xl mx-auto space-y-4">
+                <p>Many companies already use chatbots.</p>
+                <p>However, a **simple chatbot alone is not enough**.</p>
+                <div
+                    class="bg-gradient-to-r from-accent-indigo/20 to-accent-cyan/20 p-8 rounded-3xl border border-white/5">
+                    <p class="text-white font-bold text-lg">The real value of this platform comes from **additional
+                        enterprise tools** built around customer support.</p>
+                    <p class="mt-4 text-accent-cyan">Key capabilities include:</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features (7-10) -->
+        <div class="space-y-24">
+            <!-- Voice -->
+            <section class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 glass p-10 rounded-[60px] relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent-indigo opacity-5"></div>
+                    <h2 class="text-3xl font-display font-bold text-white mb-6">7. Voice Interaction Support</h2>
+                    <p class="mb-8">The platform integrates **voice-based interaction**.</p>
+                    <p class="text-slate-500 font-bold uppercase text-xs mb-4">Technologies involved:</p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-white font-bold mb-1">### Sonic – Text to Speech</h4>
+                            <p class="text-sm">Allows the system to **talk to customers** naturally.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-1">### Ink – Speech to Text</h4>
+                            <p class="text-sm">Allows customers to **speak instead of typing**.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <p class="text-accent-indigo font-bold mb-4">Benefits:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-accent-indigo"></div> * Improves accessibility
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-accent-indigo"></div> * Enables automated phone-like support
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-accent-indigo"></div> * Reduces call center load
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Payment Detection -->
+            <section class="bg-white/5 border border-white/10 p-12 rounded-[50px]">
+                <h2 class="text-3xl font-display font-bold text-white mb-8">8. Smart Payment Issue Detection</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <p class="mb-4 underline font-bold">Example scenario:</p>
+                        <p class="mb-6 italic">A customer attempts payment using a card.</p>
+                        <p class="mb-4">The system automatically detects:</p>
+                        <ul class="space-y-2 mb-8 pl-4">
+                            <li>* Payment gateway failure</li>
+                            <li>* Unsupported card</li>
+                            <li>* Bank-side rejection</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark p-8 rounded-3xl border border-white/5">
+                        <p class="text-slate-500 text-xs font-bold mb-4 uppercase">Instead of escalating to support, the
+                            UI can instantly show:</p>
+                        <div class="bg-indigo-600/10 p-6 rounded-2xl border border-indigo-500/30">
+                            <p class="text-indigo-400 font-bold mb-2">**Example Message**</p>
+                            <p class="text-slate-200">"HDFC card payments are currently experiencing issues. Please try
+                                another card or UPI."</p>
+                        </div>
+                        <p class="mt-6 text-white font-bold text-center">This **prevents unnecessary support
+                            interactions**.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Insights -->
+            <section>
+                <h2 class="text-3xl font-display font-bold text-white mb-8">9. Intelligent Issue Insights Tool</h2>
+                <p class="max-w-3xl mb-12">One of the most powerful components is the **Issue Insights Engine**. This is
+                    a **plug-and-play analytics tool** that automatically analyzes support conversations.</p>
+                <div class="grid md:grid-cols-4 gap-4 mb-24">
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-white/5 text-center">
+                        <p class="text-sm font-bold text-accent-cyan">* Chat log scanning</p>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-white/5 text-center">
+                        <p class="text-sm font-bold text-accent-cyan">* Issue clustering</p>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-white/5 text-center">
+                        <p class="text-sm font-bold text-accent-cyan">* Trend detection</p>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-white/5 text-center">
+                        <p class="text-sm font-bold text-accent-cyan">* Real-time alerts</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 border-t border-white/5 pt-24">
+                    <div>
+                        <h2 class="text-3xl font-display font-bold text-white mb-8 underline decoration-accent-indigo">
+                            What It Does</h2>
+                        <p class="mb-6">The system automatically groups issues into themes like:</p>
+                        <ul class="grid grid-cols-2 gap-4 text-sm font-bold text-slate-300">
+                            <li>* Payment Failures</li>
+                            <li>* Login Issues</li>
+                            <li>* Refund Delays</li>
+                            <li>* Checkout Errors</li>
+                            <li>* OTP Failures</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div
+                            class="bg-slate-900 p-8 rounded-3xl border border-white/5 h-full flex flex-col justify-center">
+                            <p class="text-lg leading-relaxed text-slate-200">Instead of manually reading thousands of
+                                conversations, the system provides **clear insights instantly**.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trend Detection -->
+            <section class="text-center py-20">
+                <h2 class="text-3xl font-display font-bold text-white mb-8">10. Real-Time Trend Detection</h2>
+                <p class="mb-10 text-slate-400">The system continuously monitors incoming conversations.</p>
+                <div class="max-w-xl mx-auto glass p-10 rounded-[40px] border border-white/10">
+                    <p class="text-slate-500 font-bold mb-4 uppercase text-xs">Example insight:</p>
+                    <p class="text-2xl font-bold text-red-400 underline decoration-red-400/30 italic">"Payment Failures
+                        increasing in the last 2 hours."</p>
+                    <p class="mt-8 text-white font-bold">This allows companies to **detect system problems early**.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section 11: Metrics -->
+        <section class="mb-24 border-y border-white/5 py-24">
+            <h2 class="text-4xl font-display font-bold text-white mb-12 text-center">11. Key Dashboard Metrics</h2>
+            <p class="text-center mb-16 underline">The platform provides an **Admin Analytics Dashboard**. Key metrics
+                include:</p>
+
+            <div class="space-y-24">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-10 text-center">### Top 10 Customer Issues</h3>
+                    <p class="text-slate-500 mb-6 text-center italic">Example:</p>
+                    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">1.</span> Payment failed</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">2.</span> Order not confirmed</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">3.</span> Refund delay</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">4.</span> Card declined</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">5.</span> OTP not received</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">6.</span> Delivery tracking issues</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">7.</span> Checkout error</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">8.</span> Login problems</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">9.</span> App crash</div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/5 flex gap-4"><span
+                                class="text-slate-500">10.</span> Coupon not applied</div>
+                    </div>
+                </div>
+
+                <div class="max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-6">### Average Healing Time</h3>
+                    <p class="mb-8">Measures **how long it takes to resolve an issue automatically**.</p>
+                    <p class="mb-4 italic">Example:</p>
+                    <div class="overflow-hidden rounded-2xl border border-white/10">
+                        <table class="w-full text-left">
+                            <thead class="bg-slate-800 text-white text-sm">
+                                <tr>
+                                    <th class="p-4">Issue</th>
+                                    <th class="p-4">Average Healing Time</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5 bg-slate-900/40">
+                                <tr>
+                                    <td class="p-4">Payment failure</td>
+                                    <td class="p-4 text-accent-cyan font-bold">2 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">Order confirmation delay</td>
+                                    <td class="p-4 text-accent-cyan font-bold">3 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">Login issue</td>
+                                    <td class="p-4 text-accent-cyan font-bold">1 minute</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="glass p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold text-white mb-6 underline">### Drop-Off Rate</h3>
+                        <p class="mb-4 font-bold">Measures how many users:</p>
+                        <ul class="space-y-2">
+                            <li>* Left before getting help</li>
+                            <li>* Abandoned checkout</li>
+                            <li>* Stopped interacting with support</li>
+                        </ul>
+                    </div>
+                    <div class="glass p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold text-white mb-6 underline">### CSAT (Customer Satisfaction Score)
+                        </h3>
+                        <p class="mb-4 font-bold">Measures how satisfied customers are with:</p>
+                        <ul class="space-y-2">
+                            <li>* AI responses</li>
+                            <li>* Issue resolution</li>
+                            <li>* Speed of support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Alert System -->
+        <section class="mb-24 overflow-hidden rounded-[50px] border border-red-500/20 bg-red-950/20 p-12 relative">
+            <h2 class="text-3xl font-display font-bold text-white mb-8">12. Alert System</h2>
+            <p class="mb-10">The system can show **real-time alerts on the dashboard**.</p>
+            <p class="mb-6 font-bold text-slate-400 italic">Example:</p>
+            <div class="mb-10 text-slate-300">A **red marquee banner** running across the screen:</div>
+
+            <div class="bg-red-600 p-4 overflow-hidden whitespace-nowrap mb-12">
+                <div
+                    class="inline-block animate-[marquee_15s_linear_infinite] text-white font-black text-3xl uppercase tracking-tighter">
+                    "⚠ Payment Failures Spiking – 300% increase detected in the last 20 minutes."
+                    &nbsp;&nbsp;&nbsp;&nbsp; "⚠ Payment Failures Spiking – 300% increase detected in the last 20
+                    minutes."
+                </div>
+            </div>
+
+            <p class="text-white font-bold text-center text-xl mt-8">This allows **rapid response from operations
+                teams**.</p>
+        </section>
+
+        <!-- Section 13: UI Design -->
+        <section class="mb-24 text-center">
+            <h2
+                class="text-3xl font-display font-bold text-white mb-10 underline decoration-indigo-500 underline-offset-8">
+                13. User Interface Design</h2>
+            <p class="max-w-3xl mx-auto mb-12 text-slate-300">The UI must be **extremely simple** because many
+                enterprise users are **not technically skilled**.</p>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-900 border border-white/5 p-6 rounded-2xl flex flex-col justify-center">
+                    <p class="text-white font-bold">* Minimal complexity</p>
+                </div>
+                <div class="bg-slate-900 border border-white/5 p-6 rounded-2xl flex flex-col justify-center">
+                    <p class="text-white font-bold">* Clear visual indicators</p>
+                </div>
+                <div class="bg-slate-900 border border-white/5 p-6 rounded-2xl flex flex-col justify-center">
+                    <p class="text-white font-bold">* Easy navigation</p>
+                </div>
+                <div class="bg-slate-900 border border-white/5 p-6 rounded-2xl flex flex-col justify-center">
+                    <p class="text-white font-bold">* Simple metrics</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 14: Two Interfaces -->
+        <section class="mb-24 bg-dark border border-white/5 p-12 rounded-[60px]">
+            <h2 class="text-4xl font-display font-bold text-white mb-16 text-center">14. Two Different Interfaces</h2>
+            <p class="text-center mb-16 text-lg italic">The system has **two main user roles**.</p>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <h3
+                        class="text-4xl font-display font-bold text-accent-indigo border-b border-indigo-500/20 pb-4 italic">
+                        # Customer Interface</h3>
+                    <p class="font-bold underline">Customers see:</p>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-indigo"></div> * Simple chatbot
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-indigo"></div> * Voice interaction
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-indigo"></div> * Instant issue resolution
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-indigo"></div> * Guided troubleshooting
+                        </li>
+                    </ul>
+                    <p
+                        class="mt-8 font-black text-white p-4 bg-indigo-600/10 border border-indigo-600/30 text-center rounded-2xl italic underline">
+                        This interface focuses on **speed and simplicity**.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <h3
+                        class="text-4xl font-display font-bold text-accent-cyan border-b border-cyan-500/20 pb-4 italic">
+                        # Admin Interface</h3>
+                    <p class="font-bold underline">Admins see:</p>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-cyan"></div> * Issue analytics
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-cyan"></div> * Top problems dashboard
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-cyan"></div> * Customer behavior insights
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-cyan"></div> * System alerts
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-accent-cyan"></div> * Support efficiency metrics
+                        </li>
+                    </ul>
+                    <div class="mt-8 p-6 bg-slate-900 rounded-3xl space-y-4">
+                        <p class="font-bold">Admins do **not interact with the chatbot interface**.</p>
+                        <p class="font-bold">They monitor the **overall system performance**.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 15: Demo Plan -->
+        <section class="mb-24 py-20">
+            <h2 class="text-3xl font-display font-bold text-white mb-10 text-center">15. Demo Plan</h2>
+            <p class="text-center mb-12">To demonstrate the system effectively:</p>
+            <div class="space-y-8 max-w-2xl mx-auto">
+                <div class="flex gap-6 items-start">
+                    <span class="text-4xl font-display font-bold text-accent-indigo">1.</span>
+                    <p class="text-lg">Build a **frontend dashboard using dummy data**</p>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <span class="text-4xl font-display font-bold text-accent-indigo">2.</span>
+                    <div>
+                        <p class="text-lg mb-4">Showcase:</p>
+                        <ul class="grid grid-cols-1 gap-2 pl-4">
+                            <li>* Top 10 issues</li>
+                            <li>* Issue trends</li>
+                            <li>* Healing time</li>
+                            <li>* Customer satisfaction metrics</li>
+                            <li>* Spike detection alerts</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <span class="text-4xl font-display font-bold text-accent-indigo">3.</span>
+                    <div>
+                        <p class="text-lg mb-4">Create a **demo video** showing:</p>
+                        <ul class="grid grid-cols-1 gap-2 pl-4 italic">
+                            <li>* Customer interaction</li>
+                            <li>* AI resolving issues</li>
+                            <li>* Admin dashboard insights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 16: Scalability -->
+        <section class="mb-24 glass p-16 rounded-[80px] text-center border shadow-2xl shadow-cyan-500/5">
+            <h2 class="text-3xl font-display font-bold text-white mb-8">16. Scalability Goals</h2>
+            <p class="mb-12 font-bold text-slate-500">The system must be designed for:</p>
+            <div class="flex flex-wrap justify-center gap-8 mb-16">
+                <div class="p-6 bg-white/5 rounded-3xl border border-white/5 w-48">
+                    <p class="text-xl font-bold text-white">* **Low latency**</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-3xl border border-white/5 w-48">
+                    <p class="text-xl font-bold text-white">* **High scalability**</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-3xl border border-white/5 w-48">
+                    <p class="text-xl font-bold text-white">* **Low infrastructure cost**</p>
+                </div>
+            </div>
+
+            <p class="font-bold underline mb-8">Key strategies:</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-sm font-bold opacity-60">* Small Language Models (SLM)</div>
+                <div class="text-sm font-bold opacity-60">* Efficient AI agents</div>
+                <div class="text-sm font-bold opacity-60">* Cloud-native infrastructure</div>
+                <div class="text-sm font-bold opacity-60">* Distributed processing</div>
+            </div>
+        </section>
+
+        <!-- Section 17 & 18: Impact & Summary -->
+        <section class="mb-24 py-16 bg-gradient-to-br from-indigo-900/10 to-slate-900 border-y border-white/5">
+            <h2 class="text-4xl font-display font-bold text-white mb-12 text-center underline underline-offset-[16px]">
+                17. Expected Impact</h2>
+            <p class="text-center text-xl mb-16 italic font-bold">If implemented successfully, this system can:</p>
+
+            <div class="space-y-16 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <h3 class="text-3xl font-display font-bold text-accent-indigo mb-2 underline italic">### Reduce
+                        human support workload by 70–80%</h3>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-3xl font-display font-bold text-accent-cyan mb-6 underline italic">### Reduce
+                        operational cost drastically</h3>
+                    <p class="text-slate-500 font-bold mb-4 uppercase text-sm">Example:</p>
+                    <p class="text-5xl font-display font-black text-white">From **$500,000/month → $100,000/month**</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-3xl font-display font-bold text-fuchsia-400 mb-6 underline italic">### Improve
+                        customer experience</h3>
+                    <div class="flex flex-wrap justify-center gap-12 font-bold text-white text-xl">
+                        <span>* Instant support</span>
+                        <span>* Faster resolution</span>
+                        <span>* Better satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-48">
+            <h2 class="text-5xl font-display font-bold text-white mb-10 text-center">18. Summary</h2>
+            <div class="glass p-16 rounded-[80px] border-2 border-accent-indigo/10 relative">
+                <div
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-accent-indigo rounded-full flex items-center justify-center text-white font-black text-3xl">
+                    !</div>
+                <p class="text-2xl leading-relaxed text-slate-200 mb-12 text-center font-medium">
+                    This platform aims to transform enterprise customer support by combining:
+                </p>
+                <div class="grid md:grid-cols-5 gap-4 mb-16 h-20">
+                    <div
+                        class="bg-indigo-600/10 border border-indigo-600/30 rounded-2xl flex items-center justify-center text-center p-2 text-xs font-bold">
+                        * AI agents</div>
+                    <div
+                        class="bg-indigo-600/10 border border-indigo-600/30 rounded-2xl flex items-center justify-center text-center p-2 text-xs font-bold">
+                        * Intelligent analytics</div>
+                    <div
+                        class="bg-indigo-600/10 border border-indigo-600/30 rounded-2xl flex items-center justify-center text-center p-2 text-xs font-bold">
+                        * Voice interfaces</div>
+                    <div
+                        class="bg-indigo-600/10 border border-indigo-600/30 rounded-2xl flex items-center justify-center text-center p-2 text-xs font-bold">
+                        * Real-time insights</div>
+                    <div
+                        class="bg-indigo-600/10 border border-indigo-600/30 rounded-2xl flex items-center justify-center text-center p-2 text-xs font-bold">
+                        * Automated issue resolution</div>
+                </div>
+                <p class="text-2xl font-bold text-white text-center leading-relaxed">
+                    Instead of simply building a **chatbot**, the goal is to create a **complete AI-driven customer
+                    support ecosystem**.
+                </p>
+            </div>
+        </section>
+
+        <footer class="text-center space-y-12 pb-24">
+            <div class="h-px bg-white/5 w-32 mx-auto"></div>
+            <p class="text-slate-500 font-bold italic">If you want, I can also help you create:</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-3 border border-white/10 rounded-xl text-sm font-bold">* **A full product
+                    architecture diagram**</span>
+                <span class="px-6 py-3 border border-white/10 rounded-xl text-sm font-bold">* **Admin dashboard UI
+                    wireframe**</span>
+                <span class="px-6 py-3 border border-white/10 rounded-xl text-sm font-bold">* **Top 20 enterprise
+                    metrics**</span>
+                <span class="px-6 py-3 border border-white/10 rounded-xl text-sm font-bold">* **Demo script for your
+                    video presentation**.</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <style>
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</body>
+
+</html>
